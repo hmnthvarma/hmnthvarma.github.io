@@ -1,0 +1,19 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Tech hardware */
+}
+
+section {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark gray */
+}
+
+h1 {
+    color: #3399ff; /* Blue */
+}
+
+a {
+    color: #3399ff;
+}
+
+a:hover {
+    color: #ff6200;
+}
