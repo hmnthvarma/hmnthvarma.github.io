@@ -1,31 +1,88 @@
 body {
-    background-image: url('https://images.unsplash.com/photo-1610465299993-e6675c9a0f25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Dark code */
+    background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Mountain adventure */
 }
 
 section {
-    background-color: rgba(20, 20, 20, 0.9); /* Near-black */
+    background-color: rgba(40, 50, 40, 0.9); /* Dark greenish-gray */
 }
 
-h2 {
-    color: #ff6200; /* Orange */
-}
-
-.project {
-    background-color: rgba(50, 50, 50, 0.9);
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.project:hover {
-    background-color: rgba(70, 70, 70, 0.9);
+h2, h3 {
+    color: #ff9900; /* Bright orange */
 }
 
 a {
-    color: #3399ff;
+    color: #ff9900;
 }
 
 a:hover {
-    color: #ff6200;
+    color: #3399ff;
+}
+
+.map-container {
+    position: relative;
+    max-width: 600px; /* Smaller for India map */
+    margin: 20px auto;
+}
+
+.india-map {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 102, 204, 0.5)); /* 3D shadow */
+}
+
+.land {
+    fill: #1a3c34; /* Dark green for land */
+    stroke: #3399ff; /* Blue border */
+    stroke-width: 2;
+    filter: url(#inner-shadow); /* Inner 3D effect */
+    transition: transform 0.2s ease;
+}
+
+.land:hover {
+    transform: scale(1.02); /* Slight 3D pop */
+}
+
+.location {
+    fill: #ff9900; /* Orange dots */
+    stroke: #ffffff;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.location:hover {
+    fill: #3399ff; /* Blue on hover */
+    transform: scale(1.5); /* Enlarge dot */
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 51, 102, 0.95); /* Matches nav/footer */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.5); /* 3D tooltip shadow */
+}
+
+.tooltip img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+/* SVG Filter for 3D Inner Shadow */
+.india-map defs {
+    filter: id="inner-shadow";
+    feOffset dx="0" dy="0";
+    feGaussianBlur stdDeviation="3";
+    feComposite operator="out" in="SourceGraphic";
+    feFlood flood-color="#1a3c34";
+    feComposite operator="in";
+    feComposite in2="SourceGraphic";
 }
