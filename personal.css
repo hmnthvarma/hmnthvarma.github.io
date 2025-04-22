@@ -20,7 +20,7 @@ a:hover {
 
 .map-container {
     position: relative;
-    max-width: 1000px; /* Fits world map */
+    max-width: 1000px;
     margin: 20px auto;
 }
 
@@ -38,7 +38,7 @@ a:hover {
 }
 
 .land:hover {
-    transform: scale(1.01); /* Subtle 3D pop */
+    transform: scale(1.01); /* 3D pop */
 }
 
 .location {
@@ -46,22 +46,22 @@ a:hover {
     stroke: #ffffff;
     stroke-width: 1;
     cursor: pointer;
-    opacity: 0; /* Hidden by default */
+    opacity: 0; /* Hidden until map hover */
     transition: opacity 0.2s ease, fill 0.2s ease, transform 0.2s ease;
 }
 
 .world-map:hover .location {
-    opacity: 1; /* Show markers on map hover */
+    opacity: 1; /* Show markers */
 }
 
 .location:hover {
     fill: #3399ff; /* Blue on hover */
-    transform: scale(1.5); /* Enlarge dot */
+    transform: scale(1.5); /* Enlarge */
 }
 
 .tooltip {
     position: absolute;
-    background: rgba(0, 51, 102, 0.95); /* Matches nav/footer */
+    background: rgba(0, 51, 102, 0.95);
     color: #ffffff;
     padding: 10px;
     border-radius: 5px;
@@ -70,7 +70,7 @@ a:hover {
     max-width: 200px;
     text-align: center;
     font-size: 0.9em;
-    box-shadow: 0 0 8px rgba(255, 153, 0, 0.5); /* 3D tooltip shadow */
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.5); /* 3D shadow */
 }
 
 .tooltip img {
