@@ -20,27 +20,42 @@ a:hover {
 
 .map-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1000px; /* Fits world map */
     margin: 20px auto;
 }
 
 .world-map {
     width: 100%;
     height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 102, 204, 0.5)); /* 3D shadow */
 }
 
 .land {
-    fill: #2a2a2a; /* Dark gray land */
+    fill: #1a3c34; /* Dark green */
+    stroke: #3399ff; /* Blue border */
+    stroke-width: 2;
+    transition: transform 0.2s ease;
+}
+
+.land:hover {
+    transform: scale(1.01); /* Subtle 3D pop */
 }
 
 .location {
-    fill: #3399ff; /* Blue dots */
+    fill: #ff9900; /* Orange dots */
+    stroke: #ffffff;
+    stroke-width: 1;
     cursor: pointer;
-    transition: fill 0.2s ease, transform 0.2s ease;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s ease, fill 0.2s ease, transform 0.2s ease;
+}
+
+.world-map:hover .location {
+    opacity: 1; /* Show markers on map hover */
 }
 
 .location:hover {
-    fill: #ff9900; /* Orange on hover */
+    fill: #3399ff; /* Blue on hover */
     transform: scale(1.5); /* Enlarge dot */
 }
 
@@ -55,6 +70,7 @@ a:hover {
     max-width: 200px;
     text-align: center;
     font-size: 0.9em;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.5); /* 3D tooltip shadow */
 }
 
 .tooltip img {
