@@ -6,7 +6,7 @@ section {
     background-color: rgba(40, 50, 40, 0.9); /* Dark greenish-gray */
 }
 
-h2 {
+h2, h3 {
     color: #ff9900; /* Bright orange */
 }
 
@@ -15,5 +15,51 @@ a {
 }
 
 a:hover {
-    color: #3399ff; /* Blue on hover for contrast */
+    color: #3399ff;
+}
+
+.map-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.world-map {
+    width: 100%;
+    height: auto;
+}
+
+.land {
+    fill: #2a2a2a; /* Dark gray land */
+}
+
+.location {
+    fill: #3399ff; /* Blue dots */
+    cursor: pointer;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.location:hover {
+    fill: #ff9900; /* Orange on hover */
+    transform: scale(1.5); /* Enlarge dot */
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 51, 102, 0.95); /* Matches nav/footer */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.tooltip img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    margin-top: 5px;
 }
